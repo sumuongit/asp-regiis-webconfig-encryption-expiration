@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace WebApplication_WithExpiration
 {
@@ -7,7 +8,7 @@ namespace WebApplication_WithExpiration
         protected void Page_Load(object sender, EventArgs e)
         {
             string expiredDate = System.Configuration.ConfigurationManager.AppSettings["ExpiredDate"].ToString();
-            DateTime date = DateTime.Parse(expiredDate);
+            DateTime date = DateTime.ParseExact(expiredDate, "yyyy-MM-dd HH:mm:ss tt", CultureInfo.InvariantCulture);
 
             if (date <= DateTime.Now)
             {                
