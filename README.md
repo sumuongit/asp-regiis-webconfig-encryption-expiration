@@ -1,5 +1,6 @@
 ## Table of Contents
 * [General Info](#general-info)
+* [Implementation](#implementation)
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Contributing](#contributing)
@@ -44,13 +45,13 @@ namespace WebApplication_WithExpiration
 **Step 3: Encrypt the Web.config Appsettings**<br/>
 Please run the following command as administrator in Visual Studio command prompt:
 ```
-aspnet_regiis.exe -pef "appSettings" "Your Application Path" -prov "DataProtectionConfigurationProvider"
+aspnet_regiis.exe -pef "appSettings" "web.config file Path" -prov "DataProtectionConfigurationProvider"
 ```
 
 **Step 4: Decrypt the Web.config Appsettings for Resetting the Expired Date, If Necessary**<br/>
 Please run the following command as administrator in Visual Studio command prompt:
 ```
-aspnet_regiis.exe -pdf "appSettings" "Your Application Path"
+aspnet_regiis.exe -pdf "appSettings" "web.config file Path"
 ```
 
 ## Technologies
